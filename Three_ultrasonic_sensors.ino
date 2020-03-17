@@ -1,10 +1,10 @@
 /***********************************************************************************************************************
    - Original Author           : BEE MB
- * *********************************************************************************************************************/
+ **********************************************************************************************************************/
 
 /***********************************************************************************************************************
    - Enhanced by        : folafunmi-db
- * *********************************************************************************************************************/
+ **********************************************************************************************************************/
 
 //Start :
 //define the pins that we will use for the first ultrasonic sensor
@@ -28,7 +28,7 @@
 #define LED_third_ping 20
 //----------------------------------------------------------------------------------------------------------------------
 
-//used variables
+//variables used
 //----------------------------------------------------------------------------------------------------------------------
 long duration, distance, UltraSensor1, UltraSensor2, UltraSensor3; //we'll use these variable to store and generate data
 
@@ -67,7 +67,7 @@ void setup()
 void loop()
 {
   // START THE LOOP FUNCTION
-  SonarSensor(trigPin1, echoPin1);              // look bellow to find the difinition of the SonarSensor function
+  SonarSensor(trigPin1, echoPin1);              // look below to find the difinition of the SonarSensor function
   UltraSensor1 = distance;                      // store the distance in the first variable
   SonarSensor(trigPin2, echoPin2);              // call the SonarSensor function again with the second sensor pins
   UltraSensor2 = distance;                      // store the new distance in the second variable
@@ -155,9 +155,9 @@ void SonarSensor(int trigPinSensor, int echoPinSensor) //it takes the trigPIN an
   //read the distance
   //----------------------------------------------------------------------------------------------------------------------
   duration = pulseIn(echoPinSensor, HIGH);
-  //pulseIn funtion will return the time on how much the configured pin remain the 
+  //pulseIn funtion will return the time on how much the configured pin remain the
   //level HIGH or LOW; in this case it will return how much time echoPinSensor stay HIGH
-  
+
   distance = (duration / 2) / 29.1; // first we have to divide the duration by two
 }// END SonarSensor FUNCTION
 
